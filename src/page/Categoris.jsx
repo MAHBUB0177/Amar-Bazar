@@ -12,7 +12,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export const Categoris = () => {
   return (
-    <div style={{background:'#f2eeed',marginTop:'20px'}}>
+    <div style={{background:'#f2eeed',paddingTop:'20px'}}>
           <section className='category-product'>
                     <div className='container'>
                               <div className='section-title text-center'>

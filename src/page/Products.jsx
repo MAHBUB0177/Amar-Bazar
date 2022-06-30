@@ -69,7 +69,7 @@ export const Products = () => {
      }, []);
 
   return (
-    <div style={{background:'#f2eeed',marginTop:'20px'}}>
+    <div style={{background:'#f2eeed',MarginTop:'20px'}}>
    
               <div className='container'>
                     <div className='section-title text-center'>

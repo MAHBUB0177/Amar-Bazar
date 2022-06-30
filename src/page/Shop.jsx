@@ -63,7 +63,7 @@ export const Shop = () => {
  
  
   return (
-    <div  style={{background:'#f2eeed',marginTop:'20px'}}>
+    <div  style={{background:'#f2eeed',}}>
 
           <div className='container'>
                               <div className='section-title text-center'>
@@ -121,8 +121,6 @@ AddToCart
            
 
       </div>
-          
-          <h2>{total}mahabub</h2>
     </div>
   )
 }

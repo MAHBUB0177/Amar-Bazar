@@ -6,9 +6,9 @@ import './Common.css'
 export const Banner = () => {
   return (
     <div  style={{background:'#dfe8e1',}}>
-<div className='row'>
+     <div className='row'>
           <div className='col-md-4 opening' >
-<img src={image9} alt='' style={{height:'350px'}}/>
+             <img src={image9} alt='' style={{height:'350px'}}/>
           </div>
           <div className='col-md-4 text-muted'>
                     <h2 style={{paddingTop:'20px'}}><b>Get Your Daily Needs From<br/> Our KachaBazar Store</b></h2>
@@ -23,10 +23,11 @@ export const Banner = () => {
 
                                     </div>
                     </div>
-                    </div>
-                    <div className='col-md-4 opening'>
-                    <img src={image10} alt='' style={{height:'350px'}}/>
-                    </div>
+          </div>
+
+          <div className='col-md-4 opening'>
+              <img src={image10} alt='' style={{height:'350px'}}/>
+          </div>
 
 </div>
     </div>

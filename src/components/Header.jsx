@@ -16,13 +16,21 @@ import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import ClearIcon from '@mui/icons-material/Clear';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import DeleteIcon from '@mui/icons-material/Delete';
-
-
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import Menu from '@mui/material/Menu';
 import { decrementCounter } from '../Service/Action/Action';
+import { width } from '@mui/system';
 
 
 export const Header = () => {
       const[over,setOver]=useState(false)
+      // const[popup,setPopup]=useState(false)
+      // const handelClick=()=>{
+      //   setPopup(true)
+      // }
+      // const handelClose=()=>{
+      //   setPopup(false)
+      // }
       const dispatch=useDispatch()
       const [isDrowerOpen, setisDrowerOpen] = useState(false)
       const domain = "https://availtrade.com/public/images/";
@@ -77,6 +85,7 @@ export const Header = () => {
                 </a>
                 <div className='navbar-links'>
                       <ul>
+                        
                           <Link to='/item' style={{textDecoration:'none'}}>
                           <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}} >Category</a></li>
                           
@@ -92,8 +101,8 @@ export const Header = () => {
                           
                           </Link>
 
-                          <Link to='/item' style={{textDecoration:'none'}}>
-                          <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}} >Blog</a></li>
+                          <Link to='#' style={{textDecoration:'none'}}>
+                          <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}}>Page<span><KeyboardArrowDownIcon/></span></a></li>
                           
                           </Link>
                             <li><a> <strong><span><IconButton style={{color:'white',height:'50px',}}><Badge color="secondary" badgeContent={product.length}>
@@ -107,12 +116,15 @@ export const Header = () => {
                            </IconButton></span></strong></a></li>
 
                            <li><a> <strong><span><IconButton style={{color:'white',height:'50px',}} onMouseOver={() => setOver(true)}><AccountCircleIcon /></IconButton></span></strong></a></li>
-                          
+           
                       </ul>
+                     
                 </div>
-               
+           
 
           </nav>
+
+
 
           {
             over &&
@@ -129,19 +141,15 @@ export const Header = () => {
                   
                   </Link>
                     <MenuItem><span><LogoutIcon /></span>Logout</MenuItem>
-                      {/* <p style={{ marginTop: '10px', marginLeft: '60px' }}>Get Started Now</p>
-                      <strong><hr /></strong>
-                           <Button variant="contained" color="secondary" style={{ width: '200px', marginTop: '20px', marginLeft: '40px' }} ><span><PersonIcon /></span><span>Profile</span></Button>
-                      <Button variant="contained" color="info" style={{ width: '200px', marginTop: '20px', marginLeft: '40px' }} >LogIn</Button>
-                      <Button variant="contained" color="primary" style={{ width: '200px', marginTop: '20px', marginLeft: '40px' }} ><span><LogoutIcon /></span><span>Logout</span></Button>
-                      <br /> */}
-
+                  
 
                  </Card>
             </ClickAwayListener>
 
 
        }
+
+       
 
                <Drawer anchor='right' open={isDrowerOpen}
                     onClose={() => setisDrowerOpen(false)} >
