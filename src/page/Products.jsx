@@ -8,7 +8,7 @@ import {
   CardActions,
   
 } from "@material-ui/core";
-import {incrementCounter} from '../Service/Action/Action'
+import {incrementCounter,incrementFav} from '../Service/Action/Action'
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import { useDispatch,useSelector } from 'react-redux';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -43,10 +43,15 @@ export const Products = () => {
 
   const dispatch=useDispatch()
   const product=useSelector(state=>state.product)
+  
 
   const addToCart =(product)=>{
     dispatch(incrementCounter(product))
     notify()
+   }
+
+   const addFav =()=>{
+    dispatch(incrementFav())
    }
 
   localStorage.setItem("cartdata", JSON.stringify(product));
@@ -69,7 +74,9 @@ export const Products = () => {
      }, []);
 
   return (
+   
     <div style={{background:'#f2eeed',MarginTop:'20px'}}>
+       
    
               <div className='container'>
                     <div className='section-title text-center'>
@@ -94,8 +101,8 @@ export const Products = () => {
             <ToastContainer/>
             </div>
             <Card.Text>
-             <h6 style={{fontSize:'15px',paddingRight:'50px'}}> {item?.product_tags?.substring(0, 12)}</h6> 
-             <p style={{paddingRight:'90px',fontSize:'14px',}}><span style={{color:'red',fontSize:'4px'}}><CurrencyRupeeIcon/></span>{item?.product_price}<span style={{color:'#ccc9c2',marginLeft:'12px',}}  onClick={()=>addToCart()}><FavoriteIcon /></span> </p>
+             <h6 style={{fontSize:'15px'}}> {item?.product_tags?.substring(0, 12)}</h6> 
+             <p style={{fontSize:'14px',}}><span style={{color:'red',fontSize:'4px'}}><CurrencyRupeeIcon/></span>{item?.product_price}<span style={{color:'#d8c8db',marginLeft:'15px',}}  onClick={()=>addFav()}><FavoriteIcon /></span> </p>
              <CardActions style={{justifyContent: "center", }}>
             <Button variant="contained" color="secondary" style={{marginBottom:'10px'}} onClick={()=>addToCart(item)}>
             AddToCart
@@ -132,8 +139,8 @@ export const Products = () => {
               <span>-</span><span style={{marginLeft:'4px',}}>{prod?.start_quantity?.substring(0,1)}</span><span style={{marginLeft:'4px',}}>+</span>
             </Button>
 
-            {/* <div className='mt-5 d-flex justify-content-between align-item-center' style={{cursor:'pointer',background:'gray',width:'100px'}}> */}
-              {/* <span style={{fontSize:'24'}}>-</span>
+            {/* <div className='mt-5 d-flex justify-content-between align-item-center' style={{cursor:'pointer',background:'gray',width:'100px'}}> 
+               <span style={{fontSize:'24'}}>-</span>
               <span style={{fontSize:'24'}}>{prod?.start_quantity}</span>
               <span style={{fontSize:'24'}}>+</span>
 

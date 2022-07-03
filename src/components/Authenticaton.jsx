@@ -8,8 +8,10 @@ import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux';
 // import {decrementCounter} from '../Service/Action/Action'
 import {userlogin} from '../Service/Action/Action'
+import { TabTitle } from '../utils/FunctionTitle';
 
 export const Authenticaton = () => {
+    TabTitle('Amar Bazar | Login')
    const [registernow, setRegisternow] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

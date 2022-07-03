@@ -25,14 +25,16 @@ export const Slider = () => {
       alt="First slide"
       style={{height:'360px',borderRadius:'15px'}}
     />
-    <Carousel.Caption>
+    <Carousel.Caption >
       <h3 style={{color:'#eb4334'}}>Fresh Vagetables</h3>
-      <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <p style={{marginLeft:'30px',fontWeight:'bold'}}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    <Button style={{backgroundColor:'green',borderRadius:'5px',color:'white'}}>Shop Now</Button>
+
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-    style={{height:'360px',borderRadius:'15px'}}
+    style={{height:'360px',borderRadius:'15px',}}
       className="d-block w-100"
       src={image1}
       alt="Second slide"
@@ -41,6 +43,7 @@ export const Slider = () => {
     <Carousel.Caption>
       <h3 style={{color:'#eb4334'}}>Latest & Updates Products</h3>
       <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <Button style={{backgroundColor:'#09801b',borderRadius:'5px',color:'white'}}>Shop Now</Button>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -54,6 +57,7 @@ export const Slider = () => {
     <Carousel.Caption>
       <h3 style={{color:'#eb4334'}}>All Updates products </h3>
       <p >Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <Button style={{backgroundColor:'#09801b',borderRadius:'5px',color:'white'}}>Shop Now</Button>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
@@ -66,29 +70,24 @@ export const Slider = () => {
                     </div>
 
           <Card style={{ width: '25rem',height:'140px',marginTop:'10px' }} >
-  <Card.Img variant="top" src={image5}  style={{height:'120px'}}/>
-  <Card.Body>
-   
-  </Card.Body>
-</Card>
+                  <Card.Img variant="top" src={image5}  style={{height:'135px'}}/>
+                  <Card.Body>
+                  
+                  </Card.Body>
+            </Card>
 
-<Card style={{ width: '25rem',height:'140px',marginTop:'10px' }}>
-  <Card.Img variant="top" src={image4} style={{height:'120px'}}/>
-  <Card.Body>
-    
-  </Card.Body>
-</Card>
+            <Card style={{ width: '25rem',height:'140px',marginTop:'10px' }}>
+                  <Card.Img variant="top" src={image4} style={{height:'135px'}}/>
+                  <Card.Body>      
+                  </Card.Body>
+          </Card>
 
           </div>
           
 
-          <div  className="container banner" style={{backgroundColor:'#f5afa9',height:'100px',borderRadius: '20px',width:'1300px'}}>
+          <div  className="container banner" style={{backgroundColor:'#f5afa9',height:'100px',borderRadius: '20px',width:'1320px',marginBottom:'20px'}}>
                   <span>  <h4 style={{marginRight:'750px',paddingTop:'15px'}}><strong ><span style={{color:'green'}}>100% Natural Quality</span></strong> Organic Product</h4> </span>
                     <p style={{marginRight:'710px' ,paddingBottom:'30px'}}>See Our latest discounted products from here and get a specialdiscount product </p>
- 
-
-                    
-
           </div>
     </div>
   )

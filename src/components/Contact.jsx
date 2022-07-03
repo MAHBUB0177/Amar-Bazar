@@ -7,7 +7,9 @@ import {  Form, Label, Input } from 'reactstrap';
 import contact from '../images/contact-us.jpg.webp'
 import '../page/Common.css'
 import Swal  from 'sweetalert2'
+import { TabTitle } from '../utils/FunctionTitle';
 export const Contact = () => {
+  TabTitle('Amar Bazar | Contact')
           const handelSubmit = event => {
                     let name = document.getElementById('name').value;
                     let email = document.getElementById('email').value;
@@ -138,6 +140,7 @@ export const Contact = () => {
                                         <Button type='btn btn-primary btn-sm' onClick={handelSubmit}>Send Messege</Button>
 
                                         </div>
+                                        
 
                               </div>
                     </Form>

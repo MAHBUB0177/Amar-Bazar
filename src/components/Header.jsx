@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './Header.css'
-import {   Container, Nav, Table } from 'react-bootstrap';
+import {   Container, Nav, Table,Form } from 'react-bootstrap';
 import Chip from '@mui/material/Chip';
 import { IconButton } from '@material-ui/core';
 import PersonIcon from '@mui/icons-material/Person';
@@ -10,7 +10,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MessageIcon from '@mui/icons-material/Message';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Card, MenuItem, ClickAwayListener,Button , Drawer, Box,Badge } from '@mui/material';
+import { Card, MenuItem, ClickAwayListener,Button , Drawer, Box,Badge,Paper,InputBase } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -20,22 +20,26 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Menu from '@mui/material/Menu';
 import { decrementCounter } from '../Service/Action/Action';
 import { width } from '@mui/system';
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 
 export const Header = () => {
       const[over,setOver]=useState(false)
-      // const[popup,setPopup]=useState(false)
-      // const handelClick=()=>{
-      //   setPopup(true)
-      // }
-      // const handelClose=()=>{
-      //   setPopup(false)
-      // }
+      const[text,setText]=useState('')
+     function submitText(e){
+      var frm=document.getElementsByName('textform')[0];
+      frm.submit()
+      frm.reset();
+      e.preventDefault()
+     }
+
       const dispatch=useDispatch()
       const [isDrowerOpen, setisDrowerOpen] = useState(false)
       const domain = "https://availtrade.com/public/images/";
       
      const product=useSelector(state=>state.product)
+    //  const count=useSelector(state=>state.count)
       let total=0;
       // console.log(total,'////+++')
   
@@ -71,11 +75,20 @@ export const Header = () => {
           }
   return (
     <div style={{marginLeft:'0px',marginRight:'0px'}}>
-          <nav className='navbar'>
+            
+            <nav className='navbar'>
                <Link to='/' style={{textDecoration:'none'}}>
-               <div className='brand-title' style={{paddingLeft:'80px',color:'#FF6F00'}}>AMAR BAZAR</div>
+               <div className='brand-title' style={{paddingLeft:'80px',color:'#FF6F00',}}>
+               <span style={{marginRight:'5px',marginBottom:'5px'}}><ShoppingBagIcon/></span>Amar Bazar
+               </div>
 
                </Link>
+               <Paper  className='opening'>
+                <Form name='textform'>
+               <InputBase style={{background:'white',width:'280px',borderRadius:'5px',height:'30px'}} type='text' placeholder='search..' onChange={(e)=>{setText(e.target.value)}} />
+               <IconButton onClick={submitText}><SearchIcon/></IconButton>
+               </Form>
+               </Paper>
 
                 <a  className='toggle-button' onClick={togglefunction}>
                       <span className='bar'></span>
@@ -85,6 +98,9 @@ export const Header = () => {
                 </a>
                 <div className='navbar-links'>
                       <ul>
+
+                      
+           
                         
                           <Link to='/item' style={{textDecoration:'none'}}>
                           <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}} >Category</a></li>
@@ -123,8 +139,6 @@ export const Header = () => {
            
 
           </nav>
-
-
 
           {
             over &&

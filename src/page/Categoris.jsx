@@ -9,8 +9,10 @@ import image7 from '../images/image7.webp'
 import image8 from '../images/image8.webp'
 import './Common.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { TabTitle } from '../utils/FunctionTitle'
 
 export const Categoris = () => {
+  TabTitle('Amar Bazar | Category')
   return (
     <div style={{background:'#f2eeed',paddingTop:'20px'}}>
           <section className='category-product'>

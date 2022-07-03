@@ -15,10 +15,13 @@ import { width } from '@mui/system'
 
 import { Card} from 'react-bootstrap';
 import Chip from '@mui/material/Chip';
+import { TabTitle } from '../utils/FunctionTitle'
 
 
 
 export const About = () => {
+      // document.title="About"
+      TabTitle('Amar Bazar | About')
   return (
     <div className='mb-5'>
           <div className='row d-flex' style={{background:'#f0faf3',height:'200px'}} >

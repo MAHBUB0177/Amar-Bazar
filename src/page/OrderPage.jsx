@@ -20,7 +20,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import {   Container, Nav, Table } from 'react-bootstrap';
+import { TabTitle } from '../utils/FunctionTitle';
 const OrderPage = () => {
+  TabTitle('Amar Bazar | OrderPage')
   const domain = "https://availtrade.com/public/images/";
   const dispatch=useDispatch()
 
@@ -117,7 +119,7 @@ const removeItem=(product)=>{
 
 
   {  cartItem?.length > 0 && 
-          <div className='col-md-5 ' style={{background:'#dce0dd',height:'300px',marginTop:'10px'}}>
+          <div className='col-md-5 ' style={{background:'#dce0dd',height:'300px',marginTop:'40px'}}>
             
                 <h4 style={{marginLeft:'40px',marginTop:'10px'}}>Order Summary</h4>
                 <hr/>
