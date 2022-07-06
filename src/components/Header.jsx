@@ -22,7 +22,8 @@ import { decrementCounter } from '../Service/Action/Action';
 import { width } from '@mui/system';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Header = () => {
       const[over,setOver]=useState(false)
@@ -39,18 +40,15 @@ export const Header = () => {
       const domain = "https://availtrade.com/public/images/";
       
      const product=useSelector(state=>state.product)
-    //  const count=useSelector(state=>state.count)
-      let total=0;
-      // console.log(total,'////+++')
-  
+  let total=0;
   for(let i=0;i<product.length;i++){
    let prod=product[i]
     total=total+Number(prod.product_price);
-  
-   
-
   }
-
+  const notify = () =>   toast.warning("Product Remove To Cart!",
+  {
+   position: toast.POSITION.TOP_CENTER,
+ });
  
 
 
@@ -58,10 +56,15 @@ export const Header = () => {
             document.getElementsByClassName('navbar-links')[0].classList.toggle('active')
        }
      
+       var togglefunctionbar=()=>{
+        document.getElementsByClassName('navbar-links')[0].classList.toggle('deactive')
+   }
 
       const removeItem=(product)=>{
         console.log(product,'product id')
         dispatch(decrementCounter(product))
+        notify()
+
       }
 
       var styling={
@@ -75,11 +78,11 @@ export const Header = () => {
           }
   return (
     <div style={{marginLeft:'0px',marginRight:'0px'}}>
-            
+            <ToastContainer/>
             <nav className='navbar'>
                <Link to='/' style={{textDecoration:'none'}}>
                <div className='brand-title' style={{paddingLeft:'80px',color:'#FF6F00',}}>
-               <span style={{marginRight:'5px',marginBottom:'5px'}}><ShoppingBagIcon/></span>Amar Bazar
+               <span style={{marginRight:'5px',marginBottom:'5px'}} ><ShoppingBagIcon/></span>Amar Bazar
                </div>
 
                </Link>
@@ -97,13 +100,13 @@ export const Header = () => {
 
                 </a>
                 <div className='navbar-links'>
-                      <ul>
+                      <ul className='divHeader'>
 
                       
            
                         
                           <Link to='/item' style={{textDecoration:'none'}}>
-                          <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}} >Category</a></li>
+                          <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}}  >Category</a></li>
                           
                           </Link>
 

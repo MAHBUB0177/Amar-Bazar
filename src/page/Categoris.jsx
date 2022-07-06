@@ -18,7 +18,10 @@ export const Categoris = () => {
           <section className='category-product'>
                     <div className='container'>
                               <div className='section-title text-center'>
+                                <>
                                         <h4>Category Product</h4>
+                                        <hr />
+                                        </>
                                         <p className='text-muted'>Choose your necessary products from this feature categories.</p>
 
                               </div>

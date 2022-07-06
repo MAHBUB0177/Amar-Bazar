@@ -14,11 +14,9 @@ import image10 from '../images/image10.webp'
 export const Slider = () => {
   return (
     <div className='row' style={{background:'white',marginTop:'5px'}}>
-          <div className='col-md-8' style={{height:'380px',}}>
+          <div className='col-md-8 slide' style={{height:'380px',}}>
           <Carousel >
   <Carousel.Item>
-
-  
     <img
       className="d-block w-100"
       src={image3}
@@ -63,7 +61,7 @@ export const Slider = () => {
 </Carousel>
           </div>
 
-          <div className='col-md-4' style={{border:'2px solid tomato',height:'360px'}} id="showdiv">
+          <div className='col-md-4 ' style={{border:'2px solid tomato',height:'360px'}} id="showdiv">
                     <div style={{background:'#f0adad',height:'30px'}}>
                     <h6 style={{marginRight:'50px',}}>Latest Super Discount Active Coupon Code</h6>
  
@@ -85,10 +83,35 @@ export const Slider = () => {
           </div>
           
 
-          <div  className="container banner" style={{backgroundColor:'#f5afa9',height:'100px',borderRadius: '20px',width:'1320px',marginBottom:'20px'}}>
-                  <span>  <h4 style={{marginRight:'750px',paddingTop:'15px'}}><strong ><span style={{color:'green'}}>100% Natural Quality</span></strong> Organic Product</h4> </span>
-                    <p style={{marginRight:'710px' ,paddingBottom:'30px'}}>See Our latest discounted products from here and get a specialdiscount product </p>
+          <div  className="row banner" style={{backgroundColor:'#f5afa9',height:'100px',borderRadius: '20px',marginBottom:'20px',marginLeft:'2px'}}>
+            <div className='col-md-8'>
+            <span>  <h4 ><strong ><span style={{color:'green'}}>100% Natural Quality</span></strong> Organic Product</h4> </span>
+                    <p >See Our latest discounted products from here and get a specialdiscount product </p>
+              
+            </div>
+
+            <div className='col-md-4' style={{marginTop:'25px'}}>
+            <a href='' className='view-all-btn' >Shop Now</a>
+            </div>
+                 
           </div>
+
+
+
+          {/* <div className=' row  opening' style={{background:'#8c6e91',borderRadius:'30px',marginTop:'2px',height:'100px',}}>
+          <div className='col-md-4' style={{paddingTop:'40px',fontSize:'20px'}}>
+                    <p><span><LocalShippingIcon/></span> Free Shipping From $500.00 |</p>
+          </div>
+          <div className='col-md-4' style={{paddingTop:'40px',fontSize:'20px'}}>
+                    <p><span></span><PermPhoneMsgIcon/> Support 24/7 At Anytime |</p>
+          </div>
+          <div className='col-md-4' style={{paddingTop:'40px',fontSize:'20px'}}>
+                    <p><span></span> Latest Offer Upto 20% Off |</p>
+          </div> */}
+
+
+
+    {/* </div> */}
     </div>
   )
 }

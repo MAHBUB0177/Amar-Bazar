@@ -81,6 +81,7 @@ export const Products = () => {
               <div className='container'>
                     <div className='section-title text-center'>
                               <h4>Popular Products for Daily Shopping</h4>
+                              <hr />
                               <p className='text-muted'>See all our popular products in this week. You can choose your daily<br/> needs products from this list and get some special offer with free<br/> shipping..</p>
 
                     </div>
@@ -94,10 +95,10 @@ export const Products = () => {
         <div className="row" style={{ display: 'inline-block' }} key={i}>
 
           <div className="col-md-3">
-          <Card className='shadow' style={{ width: '15rem',height:'280px' ,marginLeft:'5px',marginBottom:'5px'}}>
+          <Card className='shadow' style={{ width: '18rem',height:'280px' ,marginLeft:'15px',marginBottom:'5px'}}>
           <Card.Body>
           <div className='inner'>
-            <Card.Img variant="top" src={`${domain}${item?.products_image}`} style={{height:'100px',pointer:'cursor'}} alt='' onClick={()=>handleShow(item)}/>
+            <Card.Img variant="top" src={`${domain}${item?.products_image}`} style={{height:'120px',pointer:'cursor'}} alt='' onClick={()=>handleShow(item)}/>
             <ToastContainer/>
             </div>
             <Card.Text>

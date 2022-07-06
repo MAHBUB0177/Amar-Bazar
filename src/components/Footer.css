@@ -41,3 +41,9 @@
           margin-top: 70px;
           /* height: 400px; */
       }
+
+
+.divfooter h6:hover{
+    color:tomato;
+    cursor:pointer;
+}

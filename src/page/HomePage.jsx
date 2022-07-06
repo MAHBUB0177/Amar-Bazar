@@ -18,7 +18,7 @@ export const HomePage = () => {
           <Shop/>
           <Products/>
           <QuickSell/>
-          <DisProduct/>
+          {/* <DisProduct/> */}
           <Opening/>
           
     </div>

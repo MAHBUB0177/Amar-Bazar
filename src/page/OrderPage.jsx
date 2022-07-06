@@ -36,12 +36,10 @@ const OrderPage = () => {
   var tax=Number(total/10);
 
 
-  const notify = () =>   toast.success("product add to cart!", {
+  const notify = () =>   toast.warning("Product Remove To Cart!",
+   {
     position: toast.POSITION.TOP_CENTER,
-    
-  }
-  
-  );
+  });
 const removeItem=(product)=>{
   dispatch(decrementCounter(product))
   notify()
@@ -51,13 +49,18 @@ const removeItem=(product)=>{
   return (
     <div className='  container col-md-12' style={{  marginTop: '30px',marginLeft:'20px',marginRight:'20px' }} >
       <div class="col-12 col-lg-8 text-center">
-          <span class="dri dri-cart fa-2x bg-primary rounded-circle"></span>
-          <h2 class="mt-3">Shopping <font class="text-primary">Cart</font></h2>
+          {/* <span class="dri dri-cart fa-2x bg-primary rounded-circle"></span> */}
+          { cartItem?.length >0 &&
+          <h2 class="mt-3" style={{marginLeft:'50px'}}>Shopping <font class="text-primary">Cart</font></h2>
+
+
+          }
       </div>
 
     
 <div className="row d-flex" >
 <div className='col-md-7'>
+<ToastContainer/>
         { cartItem?.length > 0 && 
               <div className='' >
                     <Table>
@@ -81,7 +84,6 @@ const removeItem=(product)=>{
                                     <td>{item?.start_quantity}</td>
                                     <td>---</td>
                                     <td><IconButton ><span style={{color:'red'}} onClick={()=>removeItem(item)}><DeleteIcon/></span></IconButton></td> 
-                                    <ToastContainer/>
 
                                   </tr>
                                   )
@@ -109,9 +111,10 @@ const removeItem=(product)=>{
           }
  </div>
 
-          {
-                        cartItem?.length <=0 && <div className='alert alert-info container' >
-                         <h2 style={{textAlign:'center'}}> Yor Cart Is Empty !!!!!</h2>
+          {    
+          // className='alert alert-info '
+                        cartItem?.length <=0 && <div style={{height:'200px'}}>
+                         <h2 style={{textAlign:'center',color:'red',marginTop:'40px'}}> Yor Cart Is Empty !!!!!</h2>
                          
                         </div>
                         
@@ -119,7 +122,7 @@ const removeItem=(product)=>{
 
 
   {  cartItem?.length > 0 && 
-          <div className='col-md-5 ' style={{background:'#dce0dd',height:'300px',marginTop:'40px'}}>
+          <div className='col-md-5 ' style={{background:'#dce0dd',height:'300px',marginTop:'40px',marginBottom:'5px'}}>
             
                 <h4 style={{marginLeft:'40px',marginTop:'10px'}}>Order Summary</h4>
                 <hr/>

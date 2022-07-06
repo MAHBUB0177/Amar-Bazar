@@ -42,7 +42,8 @@
     }
     
     .navbar-links li:hover{
-          color: blueviolet;
+          background-color: tomato;
+          color:tomato;
     }
     
     .toggle-button{
@@ -88,7 +89,7 @@
                 text-align: center;
           }
     
-          .navbar-links li a{
+          .navbar-links li a {
                 padding: .5rem 1rem;
           }
           .navbar-links.active{
@@ -98,3 +99,5 @@
           
     }
     
+
+
