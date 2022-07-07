@@ -66,7 +66,7 @@ const removeItem=(product)=>{
                     <Table>
                             <thead>
                               <tr>
-                                <th>image</th>
+                                <th>product</th>
                                 <th>name</th>
                                 <th>Quantity</th>
                                 <th>total price</th>
@@ -124,13 +124,15 @@ const removeItem=(product)=>{
   {  cartItem?.length > 0 && 
           <div className='col-md-5 ' style={{background:'#dce0dd',height:'300px',marginTop:'40px',marginBottom:'5px'}}>
             
-                <h4 style={{marginLeft:'40px',marginTop:'10px'}}>Order Summary</h4>
+                <h4 style={{marginLeft:'0px',marginTop:'10px',color:'tomato'}}>Order Summary</h4>
                 <hr/>
-                <h6 style={{marginTop:'40px',marginRight:'390px'}}>Subtotal:{total}Tk</h6>
-                <h6 style={{marginTop:'40px',marginRight:'390px'}}>Taxes:0.00TK</h6>
-
+                <h6 style={{marginTop:'30px',marginRight:'390px'}}>Subtotal:<span style={{marginLeft:'200px'}}>{total}Tk</span></h6>
+                <h6 style={{marginRight:'390px'}}>Charge:<span style={{marginLeft:'200px'}}>{total}Tk</span></h6>
+                <h6 style={{marginRight:'390px'}}>Discount:<span style={{marginLeft:'200px'}}>{total}Tk</span></h6>
+                <br/>
                 <hr/>
-                <h4 style={{marginRight:'390px'}}><span>Total:{total}TK</span> </h4>
+                <h6 style={{marginRight:'390px'}}>Total:<span style={{marginLeft:'220px'}}>{total}Tk</span></h6>
+                
           </div>
     }
    

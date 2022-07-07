@@ -4,7 +4,7 @@ import './Footer.css'
 export const Footer = () => {
   return (
 <div className="footer"  style={{background:'#f7fcfc',paddingTop:'15px',}}>
-<footer className="site__footer">
+  <footer className="site__footer">
             <div className="site-footer">
                 <div className="container">
                     <div className="site-footer__widgets">

@@ -106,17 +106,31 @@ import { TabTitle } from '../utils/FunctionTitle';
 
      <div className="col-md-4">
      <Label htmlFor="firstname" >City</Label>
-     <Input type="text" name="Phone Number"
-          placeholder="City"
-          />
+     
+          <select id='city' class='form-control'>
+               <option>Select City----</option>
+               <option>Dhaka</option>
+               <option>Rajshahi</option>
+               <option>khulna</option>
+               <option>Borishal</option>
+               <option>Chittagong</option>
+
+          </select>
 
      </div>
 
      <div className="col-md-4">
      <Label htmlFor="firstname" >Country</Label>
-     <Input type="text" name="Phone Number"
+     <select id="cars" name="cars" class="form-control" style={{overflow:'hidden'}}>
+          <option>Select Country----</option>
+    <option value="volvo">Bangladesh</option>
+    <option value="saab">India</option>
+    <option value="fiat">Pakisthan</option>
+    <option value="audi">Srilanka</option>
+  </select>
+     {/* <Input type="text" name="Phone Number"
           placeholder="Country"
-          />
+          /> */}
 
      </div>
 
