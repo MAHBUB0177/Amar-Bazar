@@ -8,7 +8,7 @@ import {
   CardActions,
   
 } from "@material-ui/core";
-import {incrementCounter} from '../Service/Action/Action'
+import {incrementCounter,incrementFav} from '../Service/Action/Action'
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import { useDispatch,useSelector } from 'react-redux';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -53,10 +53,15 @@ export const Products = () => {
 
   const dispatch=useDispatch()
   const product=useSelector(state=>state.product)
+  
 
   const addToCart =(product)=>{
     dispatch(incrementCounter(product))
     notify()
+   }
+
+   const addFav =()=>{
+    dispatch(incrementFav())
    }
 
   localStorage.setItem("cartdata", JSON.stringify(product));
@@ -79,11 +84,14 @@ export const Products = () => {
      }, []);
 
   return (
+   
     <div style={{background:'#f2eeed',MarginTop:'20px'}}>
+       
    
               <div className='container'>
                     <div className='section-title text-center'>
                               <h4>Popular Products for Daily Shopping</h4>
+                              <hr />
                               <p className='text-muted'>See all our popular products in this week. You can choose your daily<br/> needs products from this list and get some special offer with free<br/> shipping..</p>
 
                     </div>
@@ -97,16 +105,16 @@ export const Products = () => {
         <div className="row" style={{ display: 'inline-block' }} key={i}>
 
           <div className="col-md-3">
-          <Card className='shadow' style={{ width: '15rem',height:'280px' ,marginLeft:'5px',marginBottom:'5px'}}>
+          <Card className='shadow' style={{ width: '18rem',height:'280px' ,marginLeft:'15px',marginBottom:'5px'}}>
           <Card.Body>
           <div className='inner'>
-            <Card.Img variant="top" src={`${domain}${item?.products_image}`} style={{height:'100px',pointer:'cursor'}} alt='' onClick={()=>handleShow(item)}/>
+            <Card.Img variant="top" src={`${domain}${item?.products_image}`} style={{height:'120px',pointer:'cursor'}} alt='' onClick={()=>handleShow(item)}/>
             <ToastContainer/>
             </div>
             <Card.Text>
-             <h6 style={{fontSize:'15px',paddingRight:'50px'}}> {item?.product_tags?.substring(0, 12)}</h6> 
-             <p style={{paddingRight:'90px',fontSize:'14px',}}><span style={{color:'red',fontSize:'4px'}}><CurrencyRupeeIcon/></span>{item?.product_price}<span style={{color:'#ccc9c2',marginLeft:'12px',}}  onClick={()=>addToCart()}><FavoriteIcon /></span> </p>
-             <div className="star-rating">
+             {/* <h6 style={{fontSize:'15px',paddingRight:'50px'}}> {item?.product_tags?.substring(0, 12)}</h6> 
+             <p style={{paddingRight:'90px',fontSize:'14px',}}><span style={{color:'red',fontSize:'4px'}}><CurrencyRupeeIcon/></span>{item?.product_price}<span style={{color:'#ccc9c2',marginLeft:'12px',}}  onClick={()=>addToCart()}><FavoriteIcon /></span> </p> */}
+             {/* <div className="star-rating"> */}
       {/* {[...Array(5)].map((star) => {        
         return (         
           <span className="star" style={{color:'yellow',height:'40px',width:'40px'}}>&#9733;</span>        
@@ -114,9 +122,11 @@ export const Products = () => {
       })} */}
 
 
-<Rating onClick={handleRating} ratingValue={rating} />
+{/* <Rating onClick={handleRating} ratingValue={rating} /> */}
         
-    </div>
+    {/* </div> */}
+             <h6 style={{fontSize:'15px'}}> {item?.product_tags?.substring(0, 12)}</h6> 
+             <p style={{fontSize:'14px',}}><span style={{color:'red',fontSize:'4px'}}><CurrencyRupeeIcon/></span>{item?.product_price}<span style={{color:'#d8c8db',marginLeft:'15px',}}  onClick={()=>addFav()}><FavoriteIcon /></span> </p>
              <CardActions style={{justifyContent: "center", }}>
             <Button variant="contained" color="secondary" style={{marginBottom:'10px'}} onClick={()=>addToCart(item)}>
             AddToCart
@@ -153,8 +163,8 @@ export const Products = () => {
               <span>-</span><span style={{marginLeft:'4px',}}>{prod?.start_quantity?.substring(0,1)}</span><span style={{marginLeft:'4px',}}>+</span>
             </Button>
 
-            {/* <div className='mt-5 d-flex justify-content-between align-item-center' style={{cursor:'pointer',background:'gray',width:'100px'}}> */}
-              {/* <span style={{fontSize:'24'}}>-</span>
+            {/* <div className='mt-5 d-flex justify-content-between align-item-center' style={{cursor:'pointer',background:'gray',width:'100px'}}> 
+               <span style={{fontSize:'24'}}>-</span>
               <span style={{fontSize:'24'}}>{prod?.start_quantity}</span>
               <span style={{fontSize:'24'}}>+</span>
 

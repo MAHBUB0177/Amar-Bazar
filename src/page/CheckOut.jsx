@@ -8,7 +8,9 @@ import {decrementCounterALL} from '../Service/Action/Action'
 import {Link} from 'react-router-dom'
 
 import React from 'react'
+import { TabTitle } from '../utils/FunctionTitle';
  const CheckOut = () => {
+     TabTitle('Amar Bazar | CheckOut')
   const dispatch=useDispatch()
 
 

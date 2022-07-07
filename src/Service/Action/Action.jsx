@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_CART,REMOVE_CART_ALL,USER_LOGEDIN } from "../Constants/ActionType";
+import { ADD_TO_CART,REMOVE_CART,REMOVE_CART_ALL,USER_LOGEDIN ,ADD_FAV} from "../Constants/ActionType";
 
 export const incrementCounter=(data)=>{
            console.log(data,'action datas')
@@ -30,5 +30,13 @@ export const userlogin=()=>{
           }
 }
 
+
+
+export const incrementFav=()=>{
+          return{
+                    type:ADD_FAV,
+                    
+          }
+}
 
 

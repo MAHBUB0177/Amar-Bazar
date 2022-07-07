@@ -1,57 +1,141 @@
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 1250px) {
           #showdiv {
               visibility: hidden;
               display: none;
           }
-      }
+      } */
 
-@media screen and (max-width: 600px) {
+
+/* @media screen and (max-width: 600px) {
         .banner {
             visibility: hidden;
             display: none;
         }
+    } */
+
+
+/* //media query/// */
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+    #my-content {
+        display: block;
     }
+    /* show it on small screens */
+}
 
-@media screen and (max-width: 600px) {
-        .delivery {
-            visibility: hidden;
-            display: none;
-        }
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+    #my-content {
+        display: none;
     }
+    /* hide it elsewhere */
+}
 
 
-.inner{
+/* /////// slide banner*/
+
+@media screen and (min-width: 0px) and (max-width: 1250px) {
+    .banner {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1249px) {
+    .slide {
+        width: 100%
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1250px) {
+    #showdiv {
+        display: none;
+    }
+    /* show it on small screens */
+}
+
+
+/* //quick sell */
+
+@media screen and (min-width:0px) and (max-width: 1010px) {
+    .delivery {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width: 1010px) {
+    .delivery {
+        width: 100%;
+    }
+}
+
+
+/* ////category */
+
+.inner {
     overflow: hidden;
     cursor: pointer;
 }
-     
-.inner Img{
+
+.inner Img {
     transition: all 1.5s ease;
 }
 
-.inner:hover Img{
+.inner:hover Img {
     transform: scale(1.5);
 }
 
-.catprod{
+.catprod {
     overflow: hidden;
 }
-.catprod catbod{
+
+.catprod catbod {
     transition: all 1.5s ease;
-
 }
 
-.catprod:hover img{
+.catprod:hover img {
     transform: scale(1.5);
-
 }
 
-@media screen and (max-width: 600px) {
+
+/* //opening shop */
+
+@media screen and (min-width:0px) and (max-width: 1024px) {
     .opening {
         visibility: hidden;
         display: none;
     }
 }
+
+@media screen and (min-width:0px) and (max-width: 1024px) {
+    .bannertext {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width: 1010px) {
+    .logoimg {
+        width: 100%;
+    }
+}
+
+
+/* contact page */
+
+@media screen and (min-width: 0px) and (max-width: 1249px) {
+    .contactfrm {
+        width: 100%
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1249px) {
+    .contactimg {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+
+/* ///// */
 
 @media screen and (max-width: 480px) {
     .showimg {
@@ -59,8 +143,7 @@
     }
 }
 
-
-a.view-all-btn{
+a.view-all-btn {
     background: var(--bs-success);
     padding: 7px 30px;
     border-radius: 50px;
@@ -68,16 +151,15 @@ a.view-all-btn{
     text-decoration: none;
 }
 
-.showdiv:hover showdiv{
+.showdiv:hover showdiv {
     border-color: blueviolet;
 }
 
 @media (max-width: 576px) {
-    .founder{
+    .founder {
         padding: 0px;
         margin: 0px;
         display: flex;
         flex-direction: column-reverse;
     }
-    
 }

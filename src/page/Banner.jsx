@@ -10,15 +10,15 @@ export const Banner = () => {
           <div className='col-md-4 opening' >
              <img src={image9} alt='' style={{height:'350px'}}/>
           </div>
-          <div className='col-md-4 text-muted'>
+          <div className='col-md-4 text-muted bannertext'>
                     <h2 style={{paddingTop:'20px'}}><b>Get Your Daily Needs From<br/> Our KachaBazar Store</b></h2>
                     <p>There are many products you will find our shop, Choose <br/>your daily necessary product from our KachaBazar shop<br/> and get some special offer.</p>
                     <div className='row' style={{display:'flex'}}>
-                                    <div className='col-md-6' style={{marginTop:'10px',}}>
+                                    <div className='col-md-6 ' style={{marginTop:'10px',}}>
                                         <img src="https://www.availtrade.com/public/frontEnd/footer/appStore.png" />
 
                                     </div>
-                                    <div className='col-md-5' style={{marginTop:'10px',marginLeft:'5px'}}>
+                                    <div className='col-md-5 ' style={{marginTop:'10px',marginLeft:'5px'}}>
                                         <img src="https://www.availtrade.com/public/frontEnd/footer/appStore.png" />
 
                                     </div>

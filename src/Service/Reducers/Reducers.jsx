@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_CART ,REMOVE_CART_ALL,USER_LOGEDIN} from "../Constants/ActionType";
+import { ADD_TO_CART,REMOVE_CART ,REMOVE_CART_ALL,USER_LOGEDIN,ADD_FAV} from "../Constants/ActionType";
 
 const initialCounter={
           count:0,
@@ -17,7 +17,7 @@ const counterReducer =(state=initialCounter,action)=>{
                         else{
                               const temp={...action.payload,start_quantity:1}
                               return{
-                                        count:state.count+1,
+                                    //     count:state.count+1,
                                         product:[...state.product,temp]
                               }
 
@@ -49,6 +49,12 @@ const counterReducer =(state=initialCounter,action)=>{
                         return{
                                     ...state,
                                     islogedin:true
+                        }
+
+                  case ADD_FAV:
+                        return{
+                                    ...state,
+                                    count:state.count+1,
                         }
                     default:
                               return state;

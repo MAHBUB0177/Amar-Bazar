@@ -8,8 +8,10 @@ import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux';
 // import {decrementCounter} from '../Service/Action/Action'
 import {userlogin} from '../Service/Action/Action'
+import { TabTitle } from '../utils/FunctionTitle';
 
 export const Authenticaton = () => {
+    TabTitle('Amar Bazar | Login')
    const [registernow, setRegisternow] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -41,19 +43,30 @@ export const Authenticaton = () => {
 
 
       const loginnow = async () => {
-                    Swal.fire({
-                              icon: 'success',
-                              text: 'Login Successfully!!',
-                              timer: 1000
-                              
-                            })
-                    
 
-          dispatch(userlogin())
-          window.location.href='/checkout'
-          
+        var email=document.getElementById('email').value;
+        var pass=document.getElementById('pass').value;
+
+        if(email === '' || pass === ''){
+            Swal.fire({
+                icon: 'error',
+                text: 'UserNmae & Password Error!!',
+                timer: 1400
+                
+              })
+
+        }
+        else{
+            Swal.fire({
+                icon: 'success',
+                text: 'Login Successfully!!',
+                timer: 1200
+                
+              })
+                dispatch(userlogin())
+                window.location.href='/checkout'
+        } 
       }
-
 
 
   return (
@@ -72,6 +85,7 @@ export const Authenticaton = () => {
 
             <Grid item xs={12} md={8} sm={8}>
                 <TextField
+                    id='email'
                     style={{ width: "100%", margin: "10px 0" }}
                     variant="outlined"
                     label="Email"
@@ -79,6 +93,7 @@ export const Authenticaton = () => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextField
+                   id='pass'
                     style={{ width: "100%", margin: "10px 0" }}
                     variant="outlined"
                     label="Password"

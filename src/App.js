@@ -17,6 +17,7 @@ import PrivetRoute from './components/PrivetRoute';
 import { Categoris } from './page/Categoris';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
+import { Page404 } from './components/Page404';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           } />
           
           <Route path='/login' element={<Authenticaton/>} />
+          <Route path='/*' element={<Page404/>}/>
         
         </Routes>
         <Banner/>

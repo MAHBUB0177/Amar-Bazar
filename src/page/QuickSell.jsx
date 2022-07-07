@@ -5,8 +5,8 @@ import './Common.css'
 export const QuickSell = () => {
   return (
     <div className=' row ' style={{background:'#52bf81',borderRadius:'30px',marginTop:'20px',height:'400px'}}>
-      <div className=" container col-sm-10" style={{backgroundColor:'white',height:'300px',borderRadius: '20px',width:'1300px',marginTop:'50px'}}>
-        <div className='row'>
+      <div className=" container col-sm-11" style={{backgroundColor:'white',height:'300px',borderRadius: '20px',marginTop:'50px'}}>
+        <div className='row '>
           <div className='col-md-7 ' style={{marginTop:'20px',}}>
               <h5 >Organic Products and Food</h5>
               <h4 >Quick Delivery to <span style={{color:'#37b06b'}}>Your Home</span></h4>

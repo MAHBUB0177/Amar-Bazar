@@ -7,7 +7,9 @@ import {  Form, Label, Input } from 'reactstrap';
 import contact from '../images/contact-us.jpg.webp'
 import '../page/Common.css'
 import Swal  from 'sweetalert2'
+import { TabTitle } from '../utils/FunctionTitle';
 export const Contact = () => {
+  TabTitle('Amar Bazar | Contact')
           const handelSubmit = event => {
                     let name = document.getElementById('name').value;
                     let email = document.getElementById('email').value;
@@ -96,16 +98,16 @@ export const Contact = () => {
         
 
          <div className='row d-flex' style={{marginTop:'30px',marginBottom:'20px'}}>
-          <div className='col-md-6 opening'>
+          <div className='col-md-6 contactimg'>
                     <img src={contact} alt='contact'  style={{height:'300px'}}/>
           </div>
 
-          <div className=' col-md-6 ' >
+          <div className=' col-md-6 contactfrm ' >
                     <h4>For any suppoort just send your query</h4>
                     <p>Collaboratively promote client-focused convergence vis-a-vis customer directed alignments via plagiarize strategic users and standardized infrastructures.</p>
-                    <Form name='contact-form'>
-                              <div className=' row col-md-6' >
-                              <div className="col-md-6">
+                    <Form name='contact-form '>
+                              <div className=' row col-md-6 contactfrm' >
+                               <div className="col-md-6">
                                                   <Label htmlFor="firstname" >Name</Label>
                                                   <Input type="text" name="name" id="name"
                                                   placeholder="Enter Name" required />
@@ -138,6 +140,7 @@ export const Contact = () => {
                                         <Button type='btn btn-primary btn-sm' onClick={handelSubmit}>Send Messege</Button>
 
                                         </div>
+                                        
 
                               </div>
                     </Form>

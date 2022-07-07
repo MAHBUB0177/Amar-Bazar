@@ -15,10 +15,13 @@ import { width } from '@mui/system'
 
 import { Card} from 'react-bootstrap';
 import Chip from '@mui/material/Chip';
+import { TabTitle } from '../utils/FunctionTitle'
 
 
 
 export const About = () => {
+      // document.title="About"
+      TabTitle('Amar Bazar | About')
   return (
     <div className='mb-5'>
           <div className='row d-flex' style={{background:'#f0faf3',height:'200px'}} >
@@ -56,8 +59,8 @@ export const About = () => {
 
           <div className='shadow' style={{backgroundColor:'#644F9C',marginTop:'30px',}}>
          
-          <div className=' row d-flex ' style={{paddingBottom:'10px',paddingTop:'10px'}} >
-              <div className='col-md-4' >
+          <div className=' row d-flex  ' style={{paddingBottom:'10px',paddingTop:'10px'}} >
+              <div className='col-md-4 client' >
                   <Card style={{ width: '18rem',height:'200px',clipPath:'circle()',borderStyle:'dotted',backgroundColor:'gray',marginLeft:'30px' }}>
                   <Card.Title></Card.Title>
                         <Card.Body>
@@ -69,7 +72,7 @@ export const About = () => {
                   </Card>
 
               </div>
-                 <div className='col-md-4'>
+                 <div className='col-md-4 client'>
                           <Card style={{ width: '18rem',height:'200px',clipPath:'circle()',backgroundColor:'white',marginLeft:'30px'  }}>
                               <Card.Title></Card.Title>
                                     <Card.Body>
@@ -81,7 +84,7 @@ export const About = () => {
                           </Card>
                   </div>
 
-                  <div className='col-md-4' >
+                  <div className='col-md-4 client' >
                           <Card style={{ width: '18rem' ,height:'200px',clipPath:'circle()',backgroundColor:'#FF6F00',marginLeft:'30px'  }}>
                                   <Card.Title></Card.Title>
                                   <Card.Body>
@@ -156,28 +159,6 @@ export const About = () => {
       </div>
 
      </div>
-
-
-
-     <div className="row d-flex">
-    <div className="col-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit modi similique ipsum quas velit earum repellendus natus et ad!</p>
-
-    </div>
-    <div className="col-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit modi similique ipsum quas velit earum repellendus natus et ad!</p>
-
-    </div>
-
-    <div className="col-4">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, suscipit!</p>
-
-    </div>
-
-
-</div>
-            
-
 
     </div>
   )
