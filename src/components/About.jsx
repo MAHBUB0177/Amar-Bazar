@@ -156,6 +156,26 @@ export const About = () => {
       </div>
 
      </div>
+
+
+
+     <div className="row d-flex">
+    <div className="col-4">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit modi similique ipsum quas velit earum repellendus natus et ad!</p>
+
+    </div>
+    <div className="col-4">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit modi similique ipsum quas velit earum repellendus natus et ad!</p>
+
+    </div>
+
+    <div className="col-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, suscipit!</p>
+
+    </div>
+
+
+</div>
             
 
 

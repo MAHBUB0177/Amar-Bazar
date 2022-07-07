@@ -16,9 +16,19 @@ import Modal from 'react-bootstrap/Modal';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import { Rating } from 'react-simple-star-rating'
 
 
 export const Products = () => {
+
+  const [rating, setRating] = useState(0) // initial rating value
+
+  // Catch Rating value
+  const handleRating = (rate) => {
+    // setRating(rate)
+    // other logic
+  }
+
   const domain = "https://availtrade.com/public/images/";
   const [Products, setProducts] = useState(null);
 
@@ -96,6 +106,17 @@ export const Products = () => {
             <Card.Text>
              <h6 style={{fontSize:'15px',paddingRight:'50px'}}> {item?.product_tags?.substring(0, 12)}</h6> 
              <p style={{paddingRight:'90px',fontSize:'14px',}}><span style={{color:'red',fontSize:'4px'}}><CurrencyRupeeIcon/></span>{item?.product_price}<span style={{color:'#ccc9c2',marginLeft:'12px',}}  onClick={()=>addToCart()}><FavoriteIcon /></span> </p>
+             <div className="star-rating">
+      {/* {[...Array(5)].map((star) => {        
+        return (         
+          <span className="star" style={{color:'yellow',height:'40px',width:'40px'}}>&#9733;</span>        
+        );
+      })} */}
+
+
+<Rating onClick={handleRating} ratingValue={rating} />
+        
+    </div>
              <CardActions style={{justifyContent: "center", }}>
             <Button variant="contained" color="secondary" style={{marginBottom:'10px'}} onClick={()=>addToCart(item)}>
             AddToCart
