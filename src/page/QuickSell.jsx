@@ -4,7 +4,10 @@ import delivary from '../images/delivery-boy.webp'
 import './Common.css'
 export const QuickSell = () => {
   return (
-    <div className=' row ' style={{background:'#52bf81',borderRadius:'30px',marginTop:'20px',height:'400px'}}>
+    <div style={{background:'#f2eeed',paddingTop:'30px',paddingBottom:'30px'}}>
+
+    
+    <div className=' row ' style={{background:'#52bf81',borderRadius:'30px',paddingTop:'20px',height:'400px',marginLeft:'20px',marginRight:'20px'}}>
       <div className=" container col-sm-11" style={{backgroundColor:'white',height:'300px',borderRadius: '20px',marginTop:'50px'}}>
         <div className='row '>
           <div className='col-md-7 ' style={{marginTop:'20px',}}>
@@ -19,6 +22,7 @@ export const QuickSell = () => {
         </div>
       </div>
 
+    </div>
     </div>
   )
 }

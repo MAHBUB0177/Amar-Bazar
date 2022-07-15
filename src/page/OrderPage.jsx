@@ -80,9 +80,9 @@ const removeItem=(product)=>{
                                 cartItem?.map(item =>
                                   <tr>
                                     <td><img src={`${domain}${item?.products_image}`} alt="" style={{  height: '80px', width: '70px' ,clipPath:'circle()'}}></img></td>
-                                    <td>{item?.product_name?.substring(0,6)} <br/>{item?.product_price}TK</td>
+                                    <td>{item?.product_name?.substring(0,6)}</td>
                                     <td>{item?.start_quantity}</td>
-                                    <td>---</td>
+                                    <td>{item?.product_price}TK</td>
                                     <td><IconButton ><span style={{color:'red'}} onClick={()=>removeItem(item)}><DeleteIcon/></span></IconButton></td> 
 
                                   </tr>
@@ -101,7 +101,7 @@ const removeItem=(product)=>{
 
                         <Link to='/checkout'>
                         <div className='col-6 mb-5'>
-                              <Button variant="contained" color="info" style={{ width: '160px' ,marginLeft:'5px'}} >Checkout<ArrowForwardIcon/></Button>
+                              <Button variant="contained" color="info" style={{ width: '160px' ,marginLeft:'5px',textDecoration: 'none'}} >Checkout<ArrowForwardIcon/></Button>
 
                           </div>
                         </Link>

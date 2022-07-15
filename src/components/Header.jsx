@@ -39,7 +39,7 @@ export const Header = () => {
       const [isDrowerOpen, setisDrowerOpen] = useState(false)
       const domain = "https://availtrade.com/public/images/";
       
-     const product=useSelector(state=>state.product)
+  const product=useSelector(state=>state.product)
   let total=0;
   for(let i=0;i<product.length;i++){
    let prod=product[i]
@@ -56,9 +56,9 @@ export const Header = () => {
             document.getElementsByClassName('navbar-links')[0].classList.toggle('active')
        }
      
-       var togglefunctionbar=()=>{
-        document.getElementsByClassName('navbar-links')[0].classList.toggle('deactive')
-   }
+  //      var togglefunctionbar=()=>{
+  //       document.getElementsByClassName('navbar-links')[0].classList.toggle('deactive')
+  //  }
 
       const removeItem=(product)=>{
         console.log(product,'product id')
@@ -102,17 +102,12 @@ export const Header = () => {
                 <div className='navbar-links'>
                       <ul className='divHeader'>
 
-                      
-           
-                        
                           <Link to='/item' style={{textDecoration:'none'}}>
                           <li class='active'><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}}  >Category</a></li>
-                          
                           </Link>
 
                           <Link to='/about' style={{textDecoration:'none'}}>
                           <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}} >About</a></li>
-                          
                           </Link>
 
                           <Link to='/contact' style={{textDecoration:'none'}}>
@@ -121,7 +116,7 @@ export const Header = () => {
                           </Link>
 
                           <Link to='#' style={{textDecoration:'none'}}>
-                          <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}}>Page<span><KeyboardArrowDownIcon/></span></a></li>
+                          <li ><a style={{paddingRight:'20px',fontSize:'20px',color:'white',paddingTop:'15px'}}><span onClick={()=>setOver(true)}>Page<KeyboardArrowDownIcon/></span></a></li>
                           
                           </Link>
                             <li><a> <strong><span><IconButton style={{color:'white',height:'50px',}}><Badge color="secondary" badgeContent={product.length}>
@@ -146,21 +141,22 @@ export const Header = () => {
           {
             over &&
             <ClickAwayListener onClickAway={() => setOver(false)}>
-                 <Card style={{
+                 <div style={{
                       position: 'fixed',
                       width: '300px',
                       height: '70px',
                       top: '50px',
-                      marginLeft: '1000px'
+                      marginLeft: '1000px',
+                      background:'white'
                  }} >
                   <Link to='/login' style={{textDecoration:'none',color:'inherit'}}>
-                  <MenuItem><span><PersonIcon /></span>Login</MenuItem>
+                  <MenuItem onClick={()=>setOver(false)}><span ><PersonIcon /></span>Login</MenuItem>
                   
                   </Link>
-                    <MenuItem><span><LogoutIcon /></span>Logout</MenuItem>
+                    <MenuItem onClick={()=>setOver(false)}><span><LogoutIcon /></span>Logout</MenuItem>
                   
 
-                 </Card>
+                 </div>
             </ClickAwayListener>
 
 

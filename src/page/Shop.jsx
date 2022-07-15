@@ -78,7 +78,7 @@ export const Shop = () => {
  
  
   return (
-    <div  style={{background:'#f2eeed',marginBottom:'20px'}}>
+    <div  style={{background:'#f2eeed'}}>
 
 <div className='container'>
                     <div className='section-title text-center'>
@@ -97,9 +97,9 @@ export const Shop = () => {
         <div className="row" style={{ display: 'inline-block' }} key={i}>
 
           <div className="col-md-3">
-          <Card className='shadow' style={{ width: '18rem',height:'280px' ,marginLeft:'15px',marginBottom:'5px'}}>
+          <Card className='shadow inner' style={{ width: '18rem',height:'280px' ,marginLeft:'15px',marginBottom:'7px'}}>
           <Card.Body>
-          <div className='inner'>
+          <div className=''>
             <Card.Img variant="top" src={`${domain}${item?.products_image}`} style={{height:'120px',pointer:'cursor'}} alt='' onClick={()=>handleShow(item)}/>
             <ToastContainer/>
             </div>
