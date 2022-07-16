@@ -26,8 +26,10 @@ const OrderPage = () => {
   const domain = "https://availtrade.com/public/images/";
   const dispatch=useDispatch()
 
-  const cartItem=useSelector(state=>state.product)
 
+  // total cout":
+
+  const cartItem=useSelector(state=>state.product)
   let total=0;
   for (let i=0;i<cartItem.length;i++){
     let prod=cartItem[i];
@@ -35,11 +37,15 @@ const OrderPage = () => {
   }
   var tax=Number(total/10);
 
+  //toast message:
 
   const notify = () =>   toast.warning("Product Remove To Cart!",
    {
     position: toast.POSITION.TOP_CENTER,
   });
+
+//remove cart:
+
 const removeItem=(product)=>{
   dispatch(decrementCounter(product))
   notify()
@@ -136,12 +142,7 @@ const removeItem=(product)=>{
           </div>
     }
    
-
-
-
     </div>
-
-
     </div>
   );
 };

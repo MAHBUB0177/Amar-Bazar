@@ -11,7 +11,7 @@ import React from 'react'
 import { TabTitle } from '../utils/FunctionTitle';
  const CheckOut = () => {
      TabTitle('Amar Bazar | CheckOut')
-  const dispatch=useDispatch()
+    const dispatch=useDispatch()
 
 
   const handelSubmit = event => {
@@ -28,26 +28,24 @@ import { TabTitle } from '../utils/FunctionTitle';
         text: 'Please fillup carefully!',
         timer: 2000
       })
-      
-  
     }
     else {
      Swal.fire({
       icon: 'success',
       title: 'Your Order Is Confirmed!!',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
      })
-     dispatch(decrementCounterALL())
-     window.location.href='/'
-
-     
+     dispatch(decrementCounterALL());
+    window.location.href='/'
+    console.log('mahbub reedirect')
     }
   
-    event.preventDefault()
+//     event.preventDefault()
     var frm = document.getElementsByName('contact-form')[0];
     frm.submit(); // Submit the form
     frm.reset();  // Reset all form data
+
     // return false; // Prevent page refresh
    }
 

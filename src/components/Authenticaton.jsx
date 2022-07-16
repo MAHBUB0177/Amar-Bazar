@@ -1,22 +1,68 @@
-// import React from 'react'
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
-// import axios from 'axios';
 import React, { useState,useEffect } from 'react'
 import { domain } from '../env'
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux';
-// import {decrementCounter} from '../Service/Action/Action'
 import {userlogin} from '../Service/Action/Action'
 import { TabTitle } from '../utils/FunctionTitle';
+// import { handelSignOut, handleGoogleSignIn, initializefirebase } from '../utils/LoginFirebaseManager';
+
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import FirebaseConfig from '../utils/FirebaseConfig'
+firebase.initializeApp(FirebaseConfig);
 
 export const Authenticaton = () => {
-    TabTitle('Amar Bazar | Login')
+   TabTitle('Amar Bazar | Login')
+
+
+//firebase authentication:
+    // initializefirebase()
+    // handleGoogleSignIn()
+
+
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const fbprovider=new firebase.auth.FacebookAuthProvider();
+    const handleGoogleSignIn = () => {
+        
+          firebase.auth().signInWithPopup(provider)
+            .then(res => {
+              console.log('google login data ',res)
+              console.log(res.additionalUserInfo.profile.email)
+              console.log(res.credential.accessToken)
+              // window.location.href='/checkout'
+             
+            })
+            .catch(err => {
+              const errorMessage = err.message;
+              console.log(errorMessage)
+        
+            })
+        };
+        
+        const handelFbsignIn = () => {
+            firebase.auth().signInWithPopup(fbprovider)
+              .then(res => {
+                var user=res.user;
+                console.log('facebook login data ',user)
+                // window.location.href='/checkout'
+               
+              })
+              .catch(err => {
+                const errorMessage = err.message;
+                console.log(errorMessage)
+              })
+          };
+    
+//simple authentication part:
+
    const [registernow, setRegisternow] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     console.log(password)
     const [password2, setPassword2] = useState('');
+
 
     const dispatch=useDispatch()
     const register = async () => {
@@ -41,27 +87,21 @@ export const Authenticaton = () => {
       }
 
 
-
-      const loginnow = async () => {
-
+    const loginnow = async () => {
         var email=document.getElementById('email').value;
         var pass=document.getElementById('pass').value;
-
         if(email === '' || pass === ''){
             Swal.fire({
                 icon: 'error',
                 text: 'UserNmae & Password Error!!',
                 timer: 1400
-                
               })
-
         }
         else{
             Swal.fire({
                 icon: 'success',
                 text: 'Login Successfully!!',
                 timer: 1200
-                
               })
                 dispatch(userlogin())
                 window.location.href='/checkout'
@@ -71,8 +111,6 @@ export const Authenticaton = () => {
 
   return (
     <div>
-          
-
           <Grid
             container
             spacing={0}
@@ -99,7 +137,6 @@ export const Authenticaton = () => {
                     label="Password"
                     type='password'
                     onChange={(e) => setPassword(e.target.value)}
-
                 />
                 {
                     registernow &&
@@ -132,9 +169,9 @@ export const Authenticaton = () => {
                     <br/>
                     <br/>
 
-                    <Button  variant='contained' color='secondary'  >
+                    <Button  variant='contained' color='secondary'  onClick={handelFbsignIn}>
                                 Facebook Login
-                    </Button> or  <Button  variant='contained' color='primary'  >
+                    </Button>  <b>OR</b>   <Button  variant='contained' color='primary'  onClick={handleGoogleSignIn}>
                                 Google Login
                     </Button>
                         </>

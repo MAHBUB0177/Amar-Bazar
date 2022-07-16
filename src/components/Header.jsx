@@ -24,8 +24,18 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { handelSignOut } from '../utils/LoginFirebaseManager';
+
+
+
+
 
 export const Header = () => {
+
+  //firabse authentication:
+  // handelSignOut()
+
+
       const[over,setOver]=useState(false)
       const[text,setText]=useState('')
      function submitText(e){
