@@ -13,8 +13,8 @@ import image10 from '../images/image10.webp'
 
 export const Slider = () => {
   return (
-    <div className='row' style={{background:'white',marginTop:'5px'}}>
-          <div className='col-md-8 slide' style={{height:'380px',}}>
+    <div className='row' style={{background:'white',marginTop:'5px',marginLeft:'2px',marginRight:'2px'}}>
+          <div className='col-md-8 slide' style={{height:'380px'}}>
           <Carousel >
   <Carousel.Item>
     <img
@@ -83,14 +83,14 @@ export const Slider = () => {
           </div>
           
 
-          <div  className="row banner" style={{backgroundColor:'#f5afa9',height:'100px',borderRadius: '20px',marginBottom:'20px',marginLeft:'2px'}}>
+          <div  className="row " style={{backgroundColor:'#f5afa9',borderRadius: '5px',marginBottom:'20px',marginLeft:'2px',}}>
             <div className='col-md-8'>
             <span>  <h4 ><strong ><span style={{color:'green'}}>100% Natural Quality</span></strong> Organic Product</h4> </span>
                     <p >See Our latest discounted products from here and get a specialdiscount product </p>
               
             </div>
 
-            <div className='col-md-4' style={{marginTop:'25px'}}>
+            <div className='col-md-4' style={{marginTop:'25px',marginBottom:'20px'}}>
             <a href='' className='view-all-btn' >Shop Now</a>
             </div>
                  

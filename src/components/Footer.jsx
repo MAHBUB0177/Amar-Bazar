@@ -12,7 +12,7 @@ export const Footer = () => {
                             <div className="col-12 col-md-6 col-lg-4">
                                 <div className="site-footer__widget footer-contacts">
                                     <h5 className="footer-contacts__title">Contact Us</h5>
-                                    <hr/>
+                                    {/* <hr/> */}
                                     <div className="footer-contacts__text">Lorem ipsum dolor sit amet, consectetur
                                         adipiscing elit. Integer in feugiat lorem. Pellentque ac placerat tellus.</div>
                                     <ul className="footer-contacts__contacts">
@@ -31,7 +31,7 @@ export const Footer = () => {
                             <div className="col-6 col-md-3 col-lg-2">
                                 <div className="site-footer__widget footer-links ">
                                     <h5 className="footer-links__title">Information</h5>
-                                    <hr/>
+                                    {/* <hr/> */}
                                     <ul className="footer-links__list divfooter">
                                     <h6>Help Center</h6>
                                     <h6>Contact Us</h6>
@@ -48,7 +48,7 @@ export const Footer = () => {
                             <div className="col-6 col-md-3 col-lg-2">
                                 <div className="site-footer__widget footer-links">
                                     <h5 className="footer-links__title">My Account</h5>
-                                    <hr/>
+                                    {/* <hr/> */}
                                     <ul className="footer-links__list divfooter" >
                                     <h6>Store Location</h6>
                                     <h6>Order History</h6>
@@ -61,7 +61,7 @@ export const Footer = () => {
                             <div className="col-12 col-md-12 col-lg-4">
                                 <div className="site-footer__widget footer-newsletter">
                                     <h5 className="footer-newsletter__title">Newsletter</h5>
-                                    <hr/>
+                                    {/* <hr/> */}
                                     <div className="footer-newsletter__text">Praesent pellentesque volutpat ex, vitae auctor
                                         lorem pulvinar mollis felis at lacinia.</div>
 

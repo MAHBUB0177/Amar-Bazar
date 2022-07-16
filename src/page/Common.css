@@ -135,6 +135,7 @@
 }
 
 
+
 /* ///// */
 
 @media screen and (max-width: 480px) {
@@ -162,4 +163,36 @@ a.view-all-btn {
         display: flex;
         flex-direction: column-reverse;
     }
+}
+
+
+
+
+.slick-prev{
+    z-index:100;
+    left: 20px !important;
+}
+
+.slick-next{
+    z-index:100px;
+    right: 20px !important;
+}
+
+.slick-arrow{
+
+color: red;
+
+}
+
+.slick-dots{
+    display: none;
+}
+
+
+
+.slick-slide > div {
+  margin: 0 5px;
+}
+.slick-list {
+  margin: 0 -5px;
 }

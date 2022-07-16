@@ -129,6 +129,14 @@ export const Authenticaton = () => {
                             <Button onClick={() => setRegisternow(true)}>
                                 No account?Register Now.
                     </Button>
+                    <br/>
+                    <br/>
+
+                    <Button  variant='contained' color='secondary'  >
+                                Facebook Login
+                    </Button> or  <Button  variant='contained' color='primary'  >
+                                Google Login
+                    </Button>
                         </>
                 }
             </Grid>

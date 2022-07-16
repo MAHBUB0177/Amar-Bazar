@@ -18,6 +18,7 @@ import { Categoris } from './page/Categoris';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Page404 } from './components/Page404';
+import { Opening } from './page/Opening';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         
         </Routes>
         <Banner/>
+        <Opening/>
         <Footer />
       </Router>
       

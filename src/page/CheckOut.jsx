@@ -38,8 +38,10 @@ import { TabTitle } from '../utils/FunctionTitle';
       showConfirmButton: false,
       timer: 1500
      })
-     window.location.href='/'
      dispatch(decrementCounterALL())
+     window.location.href='/'
+
+     
     }
   
     event.preventDefault()
@@ -128,9 +130,7 @@ import { TabTitle } from '../utils/FunctionTitle';
     <option value="fiat">Pakisthan</option>
     <option value="audi">Srilanka</option>
   </select>
-     {/* <Input type="text" name="Phone Number"
-          placeholder="Country"
-          /> */}
+     
 
      </div>
 
