@@ -20,7 +20,7 @@ export const Contact = () => {
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Please fillup carefully!',
-                        timer: 2000
+                        // timer: 2000
                       })
                       
                   
